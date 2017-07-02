@@ -1,0 +1,2682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>orc</class>
+ <widget class="QMainWindow" name="orc">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1266</width>
+    <height>429</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1266</width>
+    <height>429</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>orc</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="graphics.qrc">
+    <normaloff>:/orc_icon.png</normaloff>
+    <normalon>:/orc_icon.png</normalon>:/orc_icon.png</iconset>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>512</width>
+    <height>512</height>
+   </size>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonTextOnly</enum>
+  </property>
+  <widget class="QWidget" name="outerLayout">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="fileTab">
+       <attribute name="title">
+        <string>Convert Entire File</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QGridLayout" name="gridLayout_1">
+          <item row="1" column="4" colspan="2">
+           <widget class="Line" name="line_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" colspan="3" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QLabel" name="fileLabel">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>File</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="5" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QComboBox" name="representationComboBoxFrom">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <item>
+             <property name="text">
+              <string>Quaternions</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Angle Axis</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Angle Axis With Magnitude</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Euler Angles</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="2" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QPushButton" name="selectOutputFilePushButton">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Browse...</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1" alignment="Qt::AlignVCenter">
+           <widget class="QLineEdit" name="inputLineEdit">
+            <property name="font">
+             <font>
+              <pointsize>13</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::ClickFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="fileOutputLabel">
+            <property name="font">
+             <font>
+              <pointsize>13</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Output</string>
+            </property>
+            <property name="buddy">
+             <cstring>outputLineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="Line" name="line_1">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1" alignment="Qt::AlignVCenter">
+           <widget class="QLineEdit" name="outputLineEdit">
+            <property name="font">
+             <font>
+              <pointsize>13</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::ClickFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="4" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="representationToLabel">
+            <property name="font">
+             <font>
+              <pointsize>13</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>To</string>
+            </property>
+            <property name="buddy">
+             <cstring>representationComboBoxTo</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="fileInputLabel">
+            <property name="font">
+             <font>
+              <pointsize>13</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>I&amp;nput</string>
+            </property>
+            <property name="buddy">
+             <cstring>inputLineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="4" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="representationFromLabel">
+            <property name="font">
+             <font>
+              <pointsize>13</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Fro&amp;m</string>
+            </property>
+            <property name="buddy">
+             <cstring>representationComboBoxFrom</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="5" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QComboBox" name="representationComboBoxTo">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <item>
+             <property name="text">
+              <string>Quaternions</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Angle Axis</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Angle Axis With Magnitude</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Euler Angles</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="3" rowspan="4">
+           <widget class="Line" name="line_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QPushButton" name="selectInputFilePushButton">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Browse...</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4" colspan="2" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QLabel" name="representationLabel">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Representation</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="6" rowspan="4">
+           <widget class="Line" name="line_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="7" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="translationToLabel">
+            <property name="font">
+             <font>
+              <pointsize>13</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>To</string>
+            </property>
+            <property name="buddy">
+             <cstring>translationComboBoxTo</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="7" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="translationFromLabel">
+            <property name="font">
+             <font>
+              <pointsize>13</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>From</string>
+            </property>
+            <property name="buddy">
+             <cstring>translationComboBoxFrom</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="8">
+           <widget class="QComboBox" name="translationComboBoxFrom">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <item>
+             <property name="text">
+              <string>m</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>mm</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="8">
+           <widget class="QComboBox" name="translationComboBoxTo">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <item>
+             <property name="text">
+              <string>m</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>mm</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="7" colspan="2">
+           <widget class="Line" name="line_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="7" colspan="2" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QLabel" name="translationLabel">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Translation</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="line_7">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+         <widget class="QLabel" name="templateLabel">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Template</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Line" name="line_8">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_1">
+          <item>
+           <widget class="QStackedWidget" name="stackedWidgetFrom">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="currentIndex">
+             <number>3</number>
+            </property>
+            <widget class="QWidget" name="quaternionsFromPage">
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+                 <widget class="QLabel" name="quaternionsFromFromLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>From</string>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                 <widget class="QLabel" name="quaternionsFromLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>14</pointsize>
+                    <weight>50</weight>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Quaternions</string>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+                 <widget class="QPushButton" name="quaternionsFromHelpPushButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::ClickFocus</enum>
+                  </property>
+                  <property name="text">
+                   <string>?</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="quaternionsFromLineEdit">
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::ClickFocus</enum>
+                </property>
+                <property name="text">
+                 <string>movel(p[$X$, $Y$, $Z$, , , ],acce, velo, time, blend) \n</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="angleAxisFromPage">
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_3">
+                <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+                 <widget class="QLabel" name="angleAxisFromFromLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>From</string>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                 <widget class="QLabel" name="angleAxisFromLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>14</pointsize>
+                    <weight>50</weight>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Angle Axis</string>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+                 <widget class="QPushButton" name="angleAxisFromHelpPushButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="text">
+                   <string>?</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="angleAxisFromLineEdit">
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="text">
+                 <string>movel(p[$X$, $Y$, $Z$, , , ],acce, velo, time, blend) \n</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="angleAxisWithMagnitudeFromPage">
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+                 <widget class="QLabel" name="angleAxisWithMagnitudeFromFromLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>From</string>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                 <widget class="QLabel" name="angleAxisWithMagnitudeFromLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>14</pointsize>
+                    <weight>50</weight>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Angle Axis With Magnitude</string>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+                 <widget class="QPushButton" name="angleAxisWithMagnitudeFromHelpPushButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="text">
+                   <string>?</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="angleAxisWithMagnitudeFromLineEdit">
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="text">
+                 <string>movel(p[$X$, $Y$, $Z$, , , ],acce, velo, time, blend) \n</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="eulerAnglesFromPage">
+             <layout class="QVBoxLayout" name="verticalLayout_10">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+                 <widget class="QLabel" name="eulerAnglesFromFromLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                   </font>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="text">
+                   <string>From</string>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+                 <widget class="QLabel" name="eulerAnglesFromLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>14</pointsize>
+                    <weight>50</weight>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="text">
+                   <string>Euler Angles</string>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+                 <widget class="QComboBox" name="eulerAnglesFromComboBox">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                   </font>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>XY'Z'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">XZ'Y'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">YX'Z'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">YZ'X'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">ZX'Y'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">ZY'X'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>XY'X'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>XZ'X'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>YX'Y'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>YZ'Y'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ZX'Z'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ZY'Z'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">XYZ (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">XZY (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">YXZ (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">YZX (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">ZXY (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">ZYX (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>XYX (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>XZX (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>YXY (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>YZY (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ZXZ (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ZYZ (extrinsic)</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+                 <widget class="QPushButton" name="eulerAnglesFromHelpPushButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="text">
+                   <string>?</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="eulerAnglesFromLineEdit">
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="text">
+                 <string>movel(p[$X$, $Y$, $Z$, , , ],acce, velo, time, blend) \n</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="line_6">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QStackedWidget" name="stackedWidgetTo">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="currentIndex">
+             <number>3</number>
+            </property>
+            <widget class="QWidget" name="quaternionsToPage">
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_6">
+                <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+                 <widget class="QLabel" name="quaternionsToToLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>To</string>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                 <widget class="QLabel" name="quaternionsToLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>14</pointsize>
+                    <weight>50</weight>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Quaternions</string>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+                 <widget class="QPushButton" name="quaternionsToHelpPushButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::ClickFocus</enum>
+                  </property>
+                  <property name="text">
+                   <string>?</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="quaternionsToLineEdit">
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::ClickFocus</enum>
+                </property>
+                <property name="text">
+                 <string>movel(p[$X$, $Y$, $Z$, , , ],acce, velo, time, blend) \n</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="angleAxisToPage">
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_7">
+                <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+                 <widget class="QLabel" name="angleAxisToToLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>To</string>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                 <widget class="QLabel" name="angleAxisToLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>14</pointsize>
+                    <weight>50</weight>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Angle Axis</string>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+                 <widget class="QPushButton" name="angleAxisToHelpPushButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="text">
+                   <string>?</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="angleAxisToLineEdit">
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="text">
+                 <string>movel(p[$X$, $Y$, $Z$, , , ],acce, velo, time, blend) \n</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="angleAxisWithMagnitudeToPage">
+             <layout class="QVBoxLayout" name="verticalLayout_9">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_8">
+                <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+                 <widget class="QLabel" name="angleAxisWithMagnitudeToToLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>To</string>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                 <widget class="QLabel" name="angleAxisWithMagnitudeToLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>14</pointsize>
+                    <weight>50</weight>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Angle Axis With Magnitude</string>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+                 <widget class="QPushButton" name="angleAxisWithMagnitudeToHelpPushButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="text">
+                   <string>?</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="angleAxisWithMagnitudeToLineEdit">
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="text">
+                 <string>movel(p[$X$, $Y$, $Z$, , , ],acce, velo, time, blend) \n</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="eulerAnglesToPage">
+             <layout class="QVBoxLayout" name="verticalLayout_11">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_9">
+                <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+                 <widget class="QLabel" name="eulerAnglesToToLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                   </font>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="text">
+                   <string>To</string>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+                 <widget class="QLabel" name="eulerAnglesToLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>14</pointsize>
+                    <weight>50</weight>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="text">
+                   <string>Euler Angles</string>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+                 <widget class="QComboBox" name="eulerAnglesToComboBox">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                   </font>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>XY'Z'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">XZ'Y'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">YX'Z'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">YZ'X'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">ZX'Y'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">ZY'X'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>XY'X'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>XZ'X'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>YX'Y'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>YZ'Y'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ZX'Z'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ZY'Z'' (intrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">XYZ (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">XZY (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">YXZ (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">YZX (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">ZXY (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">ZYX (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>XYX (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>XZX (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>YXY (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>YZY (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ZXZ (extrinsic)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ZYZ (extrinsic)</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+                 <widget class="QPushButton" name="eulerAnglesToHelpPushButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="text">
+                   <string>?</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="eulerAnglesToLineEdit">
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="text">
+                 <string>movel(p[$X$, $Y$, $Z$, , , ],acce, velo, time, blend) \n</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="line_9">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_1">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <item>
+           <widget class="QPushButton" name="templatesPushButton">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Templates</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QPushButton" name="saveTemplatePushButton">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Save Template</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_1">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QPushButton" name="fileConvertPushButton">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Convert</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>480</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+           <widget class="QPushButton" name="fileTabExitPushButton">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::ClickFocus</enum>
+            </property>
+            <property name="text">
+             <string>Exit</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="conversionTab">
+       <attribute name="title">
+        <string>Convert Specific Orientation</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="6" column="8">
+           <widget class="QLineEdit" name="k3LineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="5">
+           <widget class="QLineEdit" name="q2LineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4" rowspan="2" colspan="2" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QLabel" name="quaternionsConversionLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>&amp;Quaternions</string>
+            </property>
+            <property name="buddy">
+             <cstring>wLineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="8">
+           <widget class="QLineEdit" name="k1LineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="14">
+           <widget class="QLineEdit" name="e3LineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="4" colspan="2">
+           <widget class="Line" name="line_11">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="11">
+           <widget class="QLineEdit" name="RxLineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="8">
+           <widget class="QLineEdit" name="thetaLineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="10" rowspan="2" colspan="2" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QLabel" name="angleAxisWithMagnitudeConversionLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="mouseTracking">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Angle Axis &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;With Magnitude&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="buddy">
+             <cstring>RxLineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QLineEdit" name="r32LineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="9" rowspan="8">
+           <widget class="Line" name="line_17">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLineEdit" name="r11LineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3" rowspan="8">
+           <widget class="Line" name="line_15">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="11">
+           <widget class="QLineEdit" name="RzLineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="2">
+           <widget class="QLineEdit" name="r33LineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="r12LineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="5">
+           <widget class="QLineEdit" name="wLineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLineEdit" name="r22LineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="3">
+           <widget class="Line" name="line_10">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" rowspan="2" colspan="3" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QLabel" name="rotationMatrixConversionLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Rotation &amp;Matrix</string>
+            </property>
+            <property name="buddy">
+             <cstring>r11LineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="14">
+           <widget class="QLineEdit" name="e2LineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="13" colspan="2" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QPushButton" name="eulerAnglesConvertPushButton">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Convert</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="5">
+           <widget class="QLineEdit" name="q3LineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="11">
+           <widget class="QLineEdit" name="RyLineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="2">
+           <widget class="QLineEdit" name="r13LineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLineEdit" name="r31LineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="2">
+           <widget class="QLineEdit" name="r23LineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLineEdit" name="r21LineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" colspan="3" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QPushButton" name="rotationMatrixConvertPushButton">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Convert</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="10" colspan="2">
+           <widget class="Line" name="line_13">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="5">
+           <widget class="QLineEdit" name="q1LineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="10" colspan="2" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QPushButton" name="angleAxisWithMagnitudeConvertPushButton">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Convert</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="14">
+           <widget class="QLineEdit" name="e1LineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="8">
+           <widget class="QLineEdit" name="k2LineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="6" rowspan="8">
+           <widget class="Line" name="line_16">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="7" colspan="2" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QPushButton" name="angleAxisConvertPushButton">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Convert</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="7">
+           <widget class="QLabel" name="thetaLabel">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="mouseTracking">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;θ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="buddy">
+             <cstring>thetaLineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="4" colspan="2" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QPushButton" name="quaternionsConvertPushButton">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Convert</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="13" colspan="2" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QComboBox" name="eulerAnglesConversionComboBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>13</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
+            <item>
+             <property name="text">
+              <string>XY'Z'' (intrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">XZ'Y'' (intrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">YX'Z'' (intrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">YZ'X'' (intrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">ZX'Y'' (intrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">ZY'X'' (intrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>XY'X'' (intrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>XZ'X'' (intrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>YX'Y'' (intrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>YZ'Y'' (intrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ZX'Z'' (intrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ZY'Z'' (intrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">XYZ (extrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">XZY (extrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">YXZ (extrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">YZX (extrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">ZXY (extrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">ZYX (extrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>XYX (extrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>XZX (extrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>YXY (extrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>YZY (extrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ZXZ (extrinsic)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ZYZ (extrinsic)</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="13" colspan="2">
+           <widget class="Line" name="line_14">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="13" colspan="2" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QLabel" name="eulerAnglesConversionLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Euler Angles</string>
+            </property>
+            <property name="buddy">
+             <cstring>e1LineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="10" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="RzLabel">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="mouseTracking">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;R&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;Z&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="buddy">
+             <cstring>RzLineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="13" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="e2Label">
+            <property name="minimumSize">
+             <size>
+              <width>18</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="mouseTracking">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Y'&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="buddy">
+             <cstring>e2LineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="13" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="e1Label">
+            <property name="minimumSize">
+             <size>
+              <width>18</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="mouseTracking">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;X&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="buddy">
+             <cstring>e1LineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="4" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="wLabel">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="mouseTracking">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;w&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="buddy">
+             <cstring>wLineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="7" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="k3Label">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="mouseTracking">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;k&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;3&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="buddy">
+             <cstring>k3LineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="7" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="k2Label">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="mouseTracking">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;k&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="buddy">
+             <cstring>k2LineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="7" colspan="2">
+           <widget class="Line" name="line_12">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="4" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="q2Label">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="mouseTracking">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;q&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="buddy">
+             <cstring>q2LineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="7" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="k1Label">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="mouseTracking">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;k&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="buddy">
+             <cstring>k1LineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="7" rowspan="2" colspan="2" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QLabel" name="angleAxisConversionLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Angle A&amp;xis</string>
+            </property>
+            <property name="buddy">
+             <cstring>k1LineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="4" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="q1Label">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="mouseTracking">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;q&lt;span style=&quot; vertical-align:sub;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="buddy">
+             <cstring>q1LineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="4" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="q3Label">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="mouseTracking">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;q&lt;span style=&quot; vertical-align:sub;&quot;&gt;3&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="buddy">
+             <cstring>q3LineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="10" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="RyLabel">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="mouseTracking">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;R&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;Y&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="buddy">
+             <cstring>RyLineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="10" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="RxLabel">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="mouseTracking">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;R&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;X&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="buddy">
+             <cstring>RxLineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="13" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="e3Label">
+            <property name="minimumSize">
+             <size>
+              <width>18</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="mouseTracking">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Z''&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="buddy">
+             <cstring>e3LineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="12" rowspan="8">
+           <widget class="Line" name="line_18">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="13" colspan="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+             <widget class="QRadioButton" name="radianRadioButton">
+              <property name="font">
+               <font>
+                <pointsize>14</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>RAD</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+             <widget class="QRadioButton" name="degreeRadioButton">
+              <property name="font">
+               <font>
+                <pointsize>14</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>DEG</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="line_19">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_11">
+          <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QPushButton" name="clearPushButton">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::TabFocus</enum>
+            </property>
+            <property name="text">
+             <string>Clear</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+           <widget class="QPushButton" name="conversionTabExitPushButton">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="text">
+             <string>Exit</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>selectInputFilePushButton</tabstop>
+  <tabstop>selectOutputFilePushButton</tabstop>
+  <tabstop>representationComboBoxFrom</tabstop>
+  <tabstop>representationComboBoxTo</tabstop>
+  <tabstop>translationComboBoxFrom</tabstop>
+  <tabstop>translationComboBoxTo</tabstop>
+  <tabstop>fileConvertPushButton</tabstop>
+  <tabstop>templatesPushButton</tabstop>
+  <tabstop>saveTemplatePushButton</tabstop>
+  <tabstop>r11LineEdit</tabstop>
+  <tabstop>r12LineEdit</tabstop>
+  <tabstop>r13LineEdit</tabstop>
+  <tabstop>r21LineEdit</tabstop>
+  <tabstop>r22LineEdit</tabstop>
+  <tabstop>r23LineEdit</tabstop>
+  <tabstop>r31LineEdit</tabstop>
+  <tabstop>r32LineEdit</tabstop>
+  <tabstop>r33LineEdit</tabstop>
+  <tabstop>rotationMatrixConvertPushButton</tabstop>
+  <tabstop>wLineEdit</tabstop>
+  <tabstop>q1LineEdit</tabstop>
+  <tabstop>q2LineEdit</tabstop>
+  <tabstop>q3LineEdit</tabstop>
+  <tabstop>quaternionsConvertPushButton</tabstop>
+  <tabstop>k1LineEdit</tabstop>
+  <tabstop>k2LineEdit</tabstop>
+  <tabstop>k3LineEdit</tabstop>
+  <tabstop>thetaLineEdit</tabstop>
+  <tabstop>angleAxisConvertPushButton</tabstop>
+  <tabstop>RxLineEdit</tabstop>
+  <tabstop>RyLineEdit</tabstop>
+  <tabstop>RzLineEdit</tabstop>
+  <tabstop>angleAxisWithMagnitudeConvertPushButton</tabstop>
+  <tabstop>e1LineEdit</tabstop>
+  <tabstop>e2LineEdit</tabstop>
+  <tabstop>e3LineEdit</tabstop>
+  <tabstop>eulerAnglesConvertPushButton</tabstop>
+  <tabstop>clearPushButton</tabstop>
+ </tabstops>
+ <resources>
+  <include location="graphics.qrc"/>
+ </resources>
+ <connections/>
+</ui>
