@@ -60,14 +60,14 @@ orc::rotationMatrix orc::angleAxis2rotationMatrix(orc::angleAxis anAx)
     return rotM_Result;
 }
 
-orc::rotationMatrix orc::angleAxisWithMagnitude2rotationMatrix(orc::angleAxisWithMagnitude anAxWithM)
+orc::angleAxis orc::angleAxisWithMagnitude2angleAxis(orc::angleAxisWithMagnitude anAxWithM)
 {
-    orc::angleAxis anAx_MagnitudeFree;
-    anAx_MagnitudeFree.theta=sqrt(anAxWithM.rX*anAxWithM.rX+anAxWithM.rY*anAxWithM.rY+anAxWithM.rZ*anAxWithM.rZ);
-    anAx_MagnitudeFree.k1=anAxWithM.rX/anAx_MagnitudeFree.theta;
-    anAx_MagnitudeFree.k2=anAxWithM.rY/anAx_MagnitudeFree.theta;
-    anAx_MagnitudeFree.k3=anAxWithM.rZ/anAx_MagnitudeFree.theta;
-    return orc::angleAxis2rotationMatrix(anAx_MagnitudeFree);
+    orc::angleAxis anAx_Result;
+    anAx_Result.theta=sqrt(anAxWithM.rX*anAxWithM.rX+anAxWithM.rY*anAxWithM.rY+anAxWithM.rZ*anAxWithM.rZ);
+    anAx_Result.k1=anAxWithM.rX/anAx_Result.theta;
+    anAx_Result.k2=anAxWithM.rY/anAx_Result.theta;
+    anAx_Result.k3=anAxWithM.rZ/anAx_Result.theta;
+    return anAx_Result;
 }
 
 //*EULER ANGLES*
@@ -1305,9 +1305,53 @@ void orc::on_eulerAnglesConversionComboBox_currentIndexChanged(int index)
     if(ui->e1LineEdit->text().toDouble()!=0 || ui->e2LineEdit->text().toDouble()!=0 || ui->e3LineEdit->text().toDouble()!=0)
     {
         orc::on_eulerAnglesConvertPushButton_clicked();
+        ui->invalidConversionWarningLabel->setText("");
     }
 }
 //*Euler Angles* END
+
+//*MARGINS*
+bool orc::isRotationMatrixOrthogonal(orc::rotationMatrix rotM)
+{
+    if( abs((rotM.r11*rotM.r11+rotM.r12*rotM.r12+rotM.r13*rotM.r13)-1)<NORMALISE_ORTHOGONAL_LENGTH_MARGIN &&
+        abs((rotM.r21*rotM.r21+rotM.r22*rotM.r22+rotM.r23*rotM.r23)-1)<NORMALISE_ORTHOGONAL_LENGTH_MARGIN &&
+        abs((rotM.r31*rotM.r31+rotM.r32*rotM.r32+rotM.r33*rotM.r33)-1)<NORMALISE_ORTHOGONAL_LENGTH_MARGIN &&
+        abs((rotM.r11*rotM.r11+rotM.r21*rotM.r21+rotM.r31*rotM.r31)-1)<NORMALISE_ORTHOGONAL_LENGTH_MARGIN &&
+        abs((rotM.r12*rotM.r12+rotM.r22*rotM.r22+rotM.r32*rotM.r32)-1)<NORMALISE_ORTHOGONAL_LENGTH_MARGIN &&
+        abs((rotM.r31*rotM.r31+rotM.r32*rotM.r32+rotM.r33*rotM.r33)-1)<NORMALISE_ORTHOGONAL_LENGTH_MARGIN)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool orc::isQuaternionsNormalised(orc::quaternions quat)
+{
+    if(abs((quat.q1*quat.q1+quat.q2*quat.q2+quat.q3*quat.q3+quat.w*quat.w)-1)<NORMALISE_ORTHOGONAL_LENGTH_MARGIN)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool orc::isAngleAxisLengthOne(orc::angleAxis anAx)
+{
+    if(abs((anAx.k1*anAx.k1+anAx.k2*anAx.k2+anAx.k3*anAx.k3)-1)<NORMALISE_ORTHOGONAL_LENGTH_MARGIN)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+//*MARGINS* END
 
 //*RAD/DEG*
 void orc::on_radianRadioButton_toggled(bool checked)
@@ -1344,6 +1388,15 @@ void orc::on_rotationMatrixConvertPushButton_clicked()
     orc::updateAngleAxisWithMagnitude(anAxWithM_UI);
     euAn_UI=orc::rotationMatrix2eulerAngles(rotM_UI);
     orc::updateEulerAngles(euAn_UI);
+
+    if(!orc::isRotationMatrixOrthogonal(rotM_UI))
+    {
+        ui->invalidConversionWarningLabel->setText("Rotation matrix is NOT orthogonal!");
+    }
+    else
+    {
+        ui->invalidConversionWarningLabel->setText("");
+    }
 }
 
 void orc::on_quaternionsConvertPushButton_clicked()
@@ -1358,6 +1411,15 @@ void orc::on_quaternionsConvertPushButton_clicked()
     orc::updateAngleAxisWithMagnitude(anAxWithM_UI);
     euAn_UI=orc::rotationMatrix2eulerAngles(rotM_UI);
     orc::updateEulerAngles(euAn_UI);
+
+    if(!orc::isQuaternionsNormalised(quat_UI))
+    {
+        ui->invalidConversionWarningLabel->setText("Quaternions are NOT normalised!");
+    }
+    else
+    {
+        ui->invalidConversionWarningLabel->setText("");
+    }
 }
 
 void orc::on_angleAxisConvertPushButton_clicked()
@@ -1372,20 +1434,31 @@ void orc::on_angleAxisConvertPushButton_clicked()
     orc::updateAngleAxisWithMagnitude(anAxWithM_UI);
     euAn_UI=orc::rotationMatrix2eulerAngles(rotM_UI);
     orc::updateEulerAngles(euAn_UI);
+
+    if(!orc::isAngleAxisLengthOne(anAx_UI))
+    {
+        ui->invalidConversionWarningLabel->setText("Length of the axis of rotation is NOT one!");
+    }
+    else
+    {
+        ui->invalidConversionWarningLabel->setText("");
+    }
 }
 
 void orc::on_angleAxisWithMagnitudeConvertPushButton_clicked()
 {
     anAxWithM_UI=readAngleAxisWithMagnitude();
-    rotM_UI=angleAxisWithMagnitude2rotationMatrix(anAxWithM_UI);
+    anAx_UI=angleAxisWithMagnitude2angleAxis(anAxWithM_UI);
+    orc::updateAngleAxis(anAx_UI);
+    rotM_UI=angleAxis2rotationMatrix(anAx_UI);
     orc::updateRotationMatrix(rotM_UI);
 
     quat_UI=orc::rotationMatrix2quaternions(rotM_UI);
     orc::updateQuaternions(quat_UI);
-    anAx_UI=orc::rotationMatrix2angleAxis(rotM_UI);
-    orc::updateAngleAxis(anAx_UI);
     euAn_UI=orc::rotationMatrix2eulerAngles(rotM_UI);
     orc::updateEulerAngles(euAn_UI);
+
+    ui->invalidConversionWarningLabel->setText("");
 }
 
 void orc::on_eulerAnglesConvertPushButton_clicked()
@@ -1400,6 +1473,8 @@ void orc::on_eulerAnglesConvertPushButton_clicked()
     orc::updateAngleAxis(anAx_UI);
     anAxWithM_UI=orc::rotationMatrix2angleAxisWithMagnitude(rotM_UI);
     orc::updateAngleAxisWithMagnitude(anAxWithM_UI);
+
+    ui->invalidConversionWarningLabel->setText("");
 }
 //**CONVERT PUSH BUTTONS** END
 

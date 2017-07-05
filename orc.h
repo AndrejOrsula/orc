@@ -13,7 +13,7 @@
 #include <QLineEdit>
 #include <QLabel>
 
-
+#define NORMALISE_ORTHOGONAL_LENGTH_MARGIN 0.005
 
 namespace Ui
 {
@@ -62,7 +62,7 @@ public:
 
     rotationMatrix quaternions2rotationMatrix(quaternions quat);
     rotationMatrix angleAxis2rotationMatrix(angleAxis anAx);
-    rotationMatrix angleAxisWithMagnitude2rotationMatrix(angleAxisWithMagnitude anAxWithM);
+    angleAxis angleAxisWithMagnitude2angleAxis(angleAxisWithMagnitude anAxWithM);
     rotationMatrix XYZiZYXe2rotationMatrix(eulerAngles euAn);
     rotationMatrix XZYiYZXe2rotationMatrix(eulerAngles euAn);
     rotationMatrix YXZiZXYe2rotationMatrix(eulerAngles euAn);
@@ -118,6 +118,9 @@ public:
     void updateAngleAxisWithMagnitude(orc::angleAxisWithMagnitude anAxWithM);
     void updateEulerAngles(orc::eulerAngles euAn);
 
+    bool isRotationMatrixOrthogonal(orc::rotationMatrix rotM);
+    bool isQuaternionsNormalised(orc::quaternions quat);
+    bool isAngleAxisLengthOne(orc::angleAxis anAx);
 
     QString fileName;
     QFile selectedFile;
