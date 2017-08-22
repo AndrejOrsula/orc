@@ -1,5 +1,5 @@
-#include "orc.h"
 #include <QApplication>
+#include "orc.h"
 
 int main(int argc, char *argv[])
 {

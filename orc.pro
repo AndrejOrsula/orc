@@ -10,10 +10,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        orc.cpp
+        orc.cpp \
+    spatialrotationconversions.cpp
 
 HEADERS += \
-        orc.h
+        orc.h \
+    spatialrotationconversions.h
 
 FORMS += \
         orc.ui

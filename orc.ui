@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>orc</string>
+   <string>orc - Orientation Representation Converter</string>
   </property>
   <property name="windowIcon">
    <iconset resource="graphics.qrc">
@@ -61,7 +61,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="fileTab">
        <attribute name="title">
@@ -404,6 +404,13 @@
          </widget>
         </item>
         <item>
+         <widget class="Line" name="line_9">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
          <layout class="QHBoxLayout" name="horizontalLayout_1">
           <item>
            <widget class="QStackedWidget" name="stackedWidgetFrom">
@@ -447,29 +454,20 @@
                  </widget>
                 </item>
                 <item alignment="Qt::AlignRight|Qt::AlignVCenter">
-                 <widget class="QPushButton" name="quaternionsFromHelpPushButton">
-                  <property name="minimumSize">
-                   <size>
-                    <width>35</width>
-                    <height>35</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>35</width>
-                    <height>35</height>
-                   </size>
-                  </property>
+                 <widget class="QLabel" name="quaternionsFromHelpLabel">
                   <property name="font">
                    <font>
                     <pointsize>15</pointsize>
                    </font>
                   </property>
-                  <property name="focusPolicy">
-                   <enum>Qt::ClickFocus</enum>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; color:#999999;&quot;&gt;General&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#999999;&quot;&gt;:&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;Whitespaces are ignored.&lt;br/&gt;All the special parameters marked by &amp;quot;\&amp;quot; are case-insensitive.&lt;br/&gt;These parameters must NOT be directly followed&lt;br/&gt;by a digit, &amp;quot;e&amp;quot;, &amp;quot;+&amp;quot;, &amp;quot;-&amp;quot; or &amp;quot;.&amp;quot;!&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; border-color:#000000; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\X&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along X&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Y&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along Y&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Z&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along Z&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\i&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;ignore one number&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\0&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;ignore the rest of the line&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; color:#999999;&quot;&gt;Quaternions&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#999999;&quot;&gt;:&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;Include &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\w&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\q1&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\q2&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, and &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\q3&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="toolTipDuration">
+                   <number>-1</number>
                   </property>
                   <property name="text">
-                   <string>?</string>
+                   <string> ? </string>
                   </property>
                  </widget>
                 </item>
@@ -486,7 +484,7 @@
                  <enum>Qt::ClickFocus</enum>
                 </property>
                 <property name="text">
-                 <string>movel(p[$X$, $Y$, $Z$, , , ],acce, velo, time, blend) \n</string>
+                 <string>movel(p[\X, \Y, \Z, \w, \q1, \q2, \q3], \i, \i, \i, \i)</string>
                 </property>
                </widget>
               </item>
@@ -523,29 +521,17 @@
                  </widget>
                 </item>
                 <item alignment="Qt::AlignRight|Qt::AlignVCenter">
-                 <widget class="QPushButton" name="angleAxisFromHelpPushButton">
-                  <property name="minimumSize">
-                   <size>
-                    <width>35</width>
-                    <height>35</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>35</width>
-                    <height>35</height>
-                   </size>
-                  </property>
+                 <widget class="QLabel" name="angleAxisFromHelpLabel">
                   <property name="font">
                    <font>
                     <pointsize>15</pointsize>
                    </font>
                   </property>
-                  <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; color:#999999;&quot;&gt;General&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#999999;&quot;&gt;:&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;Whitespaces are ignored.&lt;br/&gt;All the special parameters marked by &amp;quot;\&amp;quot; are case-insensitive.&lt;br/&gt;These parameters must NOT be directly followed&lt;br/&gt;by a digit, &amp;quot;e&amp;quot;, &amp;quot;+&amp;quot;, &amp;quot;-&amp;quot; or &amp;quot;.&amp;quot;!&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; border-color:#000000; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\X&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along X&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Y&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along Y&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Z&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along Z&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\i&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;ignore one number&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\0&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;ignore the rest of the line&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; color:#999999;&quot;&gt;Angle Axis&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#999999;&quot;&gt;:&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;Include &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\k1&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\k2&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\k3&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, and &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\theta&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="text">
-                   <string>?</string>
+                   <string> ? </string>
                   </property>
                  </widget>
                 </item>
@@ -559,10 +545,10 @@
                  </font>
                 </property>
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::ClickFocus</enum>
                 </property>
                 <property name="text">
-                 <string>movel(p[$X$, $Y$, $Z$, , , ],acce, velo, time, blend) \n</string>
+                 <string>movel(p[\X, \Y, \Z, \k1, \k2, \k3, \theta], \i, \i, \i, \i)</string>
                 </property>
                </widget>
               </item>
@@ -599,29 +585,17 @@
                  </widget>
                 </item>
                 <item alignment="Qt::AlignRight|Qt::AlignVCenter">
-                 <widget class="QPushButton" name="angleAxisWithMagnitudeFromHelpPushButton">
-                  <property name="minimumSize">
-                   <size>
-                    <width>35</width>
-                    <height>35</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>35</width>
-                    <height>35</height>
-                   </size>
-                  </property>
+                 <widget class="QLabel" name="angleAxisWithMagnitudeFromHelpLabel">
                   <property name="font">
                    <font>
                     <pointsize>15</pointsize>
                    </font>
                   </property>
-                  <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; color:#999999;&quot;&gt;General&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#999999;&quot;&gt;:&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;Whitespaces are ignored.&lt;br/&gt;All the special parameters marked by &amp;quot;\&amp;quot; are case-insensitive.&lt;br/&gt;These parameters must NOT be directly followed&lt;br/&gt;by a digit, &amp;quot;e&amp;quot;, &amp;quot;+&amp;quot;, &amp;quot;-&amp;quot; or &amp;quot;.&amp;quot;!&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; border-color:#000000; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\X&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along X&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Y&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along Y&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Z&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along Z&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\i&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;ignore one number&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\0&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;ignore the rest of the line&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; color:#999999;&quot;&gt;Angle Axis With Magnitude&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#999999;&quot;&gt;:&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;Include &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Rx&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Ry&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, and &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Rz&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="text">
-                   <string>?</string>
+                   <string> ? </string>
                   </property>
                  </widget>
                 </item>
@@ -635,10 +609,10 @@
                  </font>
                 </property>
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::ClickFocus</enum>
                 </property>
                 <property name="text">
-                 <string>movel(p[$X$, $Y$, $Z$, , , ],acce, velo, time, blend) \n</string>
+                 <string>movel(p[\X, \Y, \Z, \Rx, \Ry, \Rz], \i, \i, \i, \i)</string>
                 </property>
                </widget>
               </item>
@@ -819,29 +793,19 @@
                  </widget>
                 </item>
                 <item alignment="Qt::AlignRight|Qt::AlignVCenter">
-                 <widget class="QPushButton" name="eulerAnglesFromHelpPushButton">
-                  <property name="minimumSize">
-                   <size>
-                    <width>35</width>
-                    <height>35</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>35</width>
-                    <height>35</height>
-                   </size>
-                  </property>
+                 <widget class="QLabel" name="eulerAnglesFromHelpLabel">
                   <property name="font">
                    <font>
                     <pointsize>15</pointsize>
+                    <weight>50</weight>
+                    <bold>false</bold>
                    </font>
                   </property>
-                  <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; color:#999999;&quot;&gt;General&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#999999;&quot;&gt;:&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;Whitespaces are ignored.&lt;br/&gt;All the special parameters marked by &amp;quot;\&amp;quot; are case-insensitive.&lt;br/&gt;These parameters must NOT be directly followed&lt;br/&gt;by a digit, &amp;quot;e&amp;quot;, &amp;quot;+&amp;quot;, &amp;quot;-&amp;quot; or &amp;quot;.&amp;quot;!&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; border-color:#000000; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\X&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along X&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Y&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along Y&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Z&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along Z&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\i&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;ignore one number&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\0&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;ignore the rest of the line&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; color:#999999;&quot;&gt;Euler Angles&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#999999;&quot;&gt;:&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;Include &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\e1&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\e2&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, and &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\e3&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;!&lt;br/&gt;Example1: XY'Z'' (intrinsic) -&amp;gt; 	X= &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\e1&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, Y'= &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\e2 &lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, Z''= &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\e3&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;&lt;br/&gt;Example2: XYZ (extrinsic) -&amp;gt; 	X= &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\e1&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, Y= &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\e2 &lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, Z= &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\e3&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="text">
-                   <string>?</string>
+                   <string> ? </string>
                   </property>
                  </widget>
                 </item>
@@ -855,10 +819,10 @@
                  </font>
                 </property>
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::ClickFocus</enum>
                 </property>
                 <property name="text">
-                 <string>movel(p[$X$, $Y$, $Z$, , , ],acce, velo, time, blend) \n</string>
+                 <string>movel(p[\X, \Y, \Z, \e1, \e2, \e3], \i, \i,  \i, \i)</string>
                 </property>
                </widget>
               </item>
@@ -915,29 +879,56 @@
                  </widget>
                 </item>
                 <item alignment="Qt::AlignRight|Qt::AlignVCenter">
-                 <widget class="QPushButton" name="quaternionsToHelpPushButton">
-                  <property name="minimumSize">
-                   <size>
-                    <width>35</width>
-                    <height>35</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>35</width>
-                    <height>35</height>
-                   </size>
-                  </property>
+                 <widget class="QLabel" name="quaternionsToHelpLabel">
                   <property name="font">
                    <font>
                     <pointsize>15</pointsize>
                    </font>
                   </property>
-                  <property name="focusPolicy">
-                   <enum>Qt::ClickFocus</enum>
+                  <property name="toolTip">
+                   <string>&lt;p&gt;&lt;span style=&quot;font-size: 12pt; font-style: italic; color: #999999;&quot;&gt;General&lt;/span&gt;&lt;span style=&quot;font-size: 12pt; color: #999999;&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;font-size: 12pt; color: #808080;&quot;&gt;&lt;br /&gt;All the special parameters marked by &quot;\&quot; are case-insensitive.&lt;br /&gt;These parameters must NOT be directly followed&lt;br /&gt;by a digit, &quot;e&quot;, &quot;+&quot;, &quot;-&quot; or &quot;.&quot;!&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;table style=&quot;border-color: #000000; margin: 0px;&quot; border=&quot;0&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p&gt;&lt;span style=&quot;font-size: 12pt; font-weight: 600; color: #808080;&quot;&gt;\X&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-weight: 600; color: #808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;p&gt;&lt;span style=&quot;font-size: 12pt; color: #808080;&quot;&gt;translation along X&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p&gt;&lt;span style=&quot;font-size: 12pt; font-weight: 600; color: #808080;&quot;&gt;\Y&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-weight: 600; color: #808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;p&gt;&lt;span style=&quot;font-size: 12pt; color: #808080;&quot;&gt;translation along Y&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p&gt;&lt;span style=&quot;font-size: 12pt; font-weight: 600; color: #808080;&quot;&gt;\Z&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-weight: 600; color: #808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;p&gt;&lt;span style=&quot;font-size: 12pt; color: #808080;&quot;&gt;translation along Z&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span style=&quot;font-size: 12pt; font-style: italic; color: #999999;&quot;&gt;Quaternions&lt;/span&gt;&lt;span style=&quot;font-size: 12pt; color: #999999;&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 12pt; color: #808080;&quot;&gt;Include &lt;/span&gt;&lt;span style=&quot;font-size: 12pt; font-weight: 600; color: #808080;&quot;&gt;\w&lt;/span&gt;&lt;span style=&quot;font-size: 12pt; color: #808080;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;font-size: 12pt; font-weight: 600; color: #808080;&quot;&gt;\q1&lt;/span&gt;&lt;span style=&quot;font-size: 12pt; color: #808080;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;font-size: 12pt; font-weight: 600; color: #808080;&quot;&gt;\q2&lt;/span&gt;&lt;span style=&quot;font-size: 12pt; color: #808080;&quot;&gt;, and &lt;/span&gt;&lt;span style=&quot;font-size: 12pt; font-weight: 600; color: #808080;&quot;&gt;\q3&lt;/span&gt;&lt;span style=&quot;font-size: 12pt; color: #808080;&quot;&gt;!&lt;/span&gt;&lt;/p&gt;</string>
                   </property>
                   <property name="text">
-                   <string>?</string>
+                   <string> ? </string>
                   </property>
                  </widget>
                 </item>
@@ -954,7 +945,7 @@
                  <enum>Qt::ClickFocus</enum>
                 </property>
                 <property name="text">
-                 <string>movel(p[$X$, $Y$, $Z$, , , ],acce, velo, time, blend) \n</string>
+                 <string>movel(p[\X, \Y, \Z, \w, \q1, \q2, \q3], acce, velo, time, blend)</string>
                 </property>
                </widget>
               </item>
@@ -991,29 +982,17 @@
                  </widget>
                 </item>
                 <item alignment="Qt::AlignRight|Qt::AlignVCenter">
-                 <widget class="QPushButton" name="angleAxisToHelpPushButton">
-                  <property name="minimumSize">
-                   <size>
-                    <width>35</width>
-                    <height>35</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>35</width>
-                    <height>35</height>
-                   </size>
-                  </property>
+                 <widget class="QLabel" name="angleAxisToHelpLabel">
                   <property name="font">
                    <font>
                     <pointsize>15</pointsize>
                    </font>
                   </property>
-                  <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; color:#999999;&quot;&gt;General&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#999999;&quot;&gt;:&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;&lt;br/&gt;All the special parameters marked by &amp;quot;\&amp;quot; are case-insensitive.&lt;br/&gt;These parameters must NOT be directly followed&lt;br/&gt;by a digit, &amp;quot;e&amp;quot;, &amp;quot;+&amp;quot;, &amp;quot;-&amp;quot; or &amp;quot;.&amp;quot;!&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; border-color:#000000; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\X&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along X&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Y&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along Y&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Z&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along Z&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; color:#999999;&quot;&gt;Angle Axis&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#999999;&quot;&gt;:&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;Include &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\k1&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\k2&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\k3&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, and &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\theta&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="text">
-                   <string>?</string>
+                   <string> ? </string>
                   </property>
                  </widget>
                 </item>
@@ -1027,10 +1006,10 @@
                  </font>
                 </property>
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::ClickFocus</enum>
                 </property>
                 <property name="text">
-                 <string>movel(p[$X$, $Y$, $Z$, , , ],acce, velo, time, blend) \n</string>
+                 <string>movel(p[\X, \Y, \Z, \k1, \k2, \k3, \theta], acce, velo, time, blend)</string>
                 </property>
                </widget>
               </item>
@@ -1067,29 +1046,17 @@
                  </widget>
                 </item>
                 <item alignment="Qt::AlignRight|Qt::AlignVCenter">
-                 <widget class="QPushButton" name="angleAxisWithMagnitudeToHelpPushButton">
-                  <property name="minimumSize">
-                   <size>
-                    <width>35</width>
-                    <height>35</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>35</width>
-                    <height>35</height>
-                   </size>
-                  </property>
+                 <widget class="QLabel" name="angleAxisWithMagnitudeToHelpLabel">
                   <property name="font">
                    <font>
                     <pointsize>15</pointsize>
                    </font>
                   </property>
-                  <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; color:#999999;&quot;&gt;General&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#999999;&quot;&gt;:&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;&lt;br/&gt;All the special parameters marked by &amp;quot;\&amp;quot; are case-insensitive.&lt;br/&gt;These parameters must NOT be directly followed&lt;br/&gt;by a digit, &amp;quot;e&amp;quot;, &amp;quot;+&amp;quot;, &amp;quot;-&amp;quot; or &amp;quot;.&amp;quot;!&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; border-color:#000000; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\X&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along X&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Y&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along Y&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Z&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along Z&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; color:#999999;&quot;&gt;Angle Axis With Magnitude&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#999999;&quot;&gt;:&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;Include &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Rx&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Ry&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, and &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Rz&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="text">
-                   <string>?</string>
+                   <string> ? </string>
                   </property>
                  </widget>
                 </item>
@@ -1103,10 +1070,10 @@
                  </font>
                 </property>
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::ClickFocus</enum>
                 </property>
                 <property name="text">
-                 <string>movel(p[$X$, $Y$, $Z$, , , ],acce, velo, time, blend) \n</string>
+                 <string>movel(p[\X, \Y, \Z, \Rx, \Ry, \Rz], acce, velo, time, blend)</string>
                 </property>
                </widget>
               </item>
@@ -1287,29 +1254,17 @@
                  </widget>
                 </item>
                 <item alignment="Qt::AlignRight|Qt::AlignVCenter">
-                 <widget class="QPushButton" name="eulerAnglesToHelpPushButton">
-                  <property name="minimumSize">
-                   <size>
-                    <width>35</width>
-                    <height>35</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>35</width>
-                    <height>35</height>
-                   </size>
-                  </property>
+                 <widget class="QLabel" name="eulerAnglesToHelpLabel">
                   <property name="font">
                    <font>
                     <pointsize>15</pointsize>
                    </font>
                   </property>
-                  <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; color:#999999;&quot;&gt;General&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#999999;&quot;&gt;:&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;&lt;br/&gt;All the special parameters marked by &amp;quot;\&amp;quot; are case-insensitive.&lt;br/&gt;These parameters must NOT be directly followed&lt;br/&gt;by a digit, &amp;quot;e&amp;quot;, &amp;quot;+&amp;quot;, &amp;quot;-&amp;quot; or &amp;quot;.&amp;quot;!&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; border-color:#000000; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\X&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along X&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Y&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along Y&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\Z&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;-&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;translation along Z&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; color:#999999;&quot;&gt;Euler Angles&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#999999;&quot;&gt;:&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;Include &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\e1&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\e2&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, and &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\e3&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;!&lt;br/&gt;Example1: XY'Z'' (intrinsic) -&amp;gt; X= &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\e1&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, Y'= &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\e2 &lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, Z''= &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\e3&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;&lt;br/&gt;Example2: XYZ (extrinsic) -&amp;gt; X= &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\e1&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, Y= &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\e2 &lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#808080;&quot;&gt;, Z= &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#808080;&quot;&gt;\e3&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="text">
-                   <string>?</string>
+                   <string> ? </string>
                   </property>
                  </widget>
                 </item>
@@ -1323,10 +1278,10 @@
                  </font>
                 </property>
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::ClickFocus</enum>
                 </property>
                 <property name="text">
-                 <string>movel(p[$X$, $Y$, $Z$, , , ],acce, velo, time, blend) \n</string>
+                 <string>movel(p[\X, \Y, \Z, \e1, \e2, \e3], acce, velo, time, blend)</string>
                 </property>
                </widget>
               </item>
@@ -1335,13 +1290,6 @@
            </widget>
           </item>
          </layout>
-        </item>
-        <item>
-         <widget class="Line" name="line_9">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
         </item>
         <item>
          <spacer name="verticalSpacer_1">
@@ -1362,11 +1310,11 @@
            <widget class="QPushButton" name="templatesPushButton">
             <property name="font">
              <font>
-              <pointsize>15</pointsize>
+              <pointsize>10</pointsize>
              </font>
             </property>
             <property name="text">
-             <string>Templates</string>
+             <string>Templates(under construction)</string>
             </property>
            </widget>
           </item>
@@ -1374,11 +1322,11 @@
            <widget class="QPushButton" name="saveTemplatePushButton">
             <property name="font">
              <font>
-              <pointsize>15</pointsize>
+              <pointsize>10</pointsize>
              </font>
             </property>
             <property name="text">
-             <string>Save Template</string>
+             <string>Save Template(under construction)</string>
             </property>
            </widget>
           </item>
